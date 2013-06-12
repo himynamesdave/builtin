@@ -21,7 +21,7 @@
 
             .twitter-share
                 Share: 
-                = link_to "Twitter", "http://twitter.com/intent/tweet?text=#{URI::encode("Built in Manchester - " + @listing.name)}&url=#{URI::encode(@listing.json[:startup][:url])}&hashtags=builtinmcr,#{@listing.comma_tags.gsub(' ', '')}", :target => "_blank"
+                = link_to "Twitter", "http://twitter.com/intent/tweet?text=#{URI::encode("Built in Hong Kong - " + @listing.name)}&url=#{URI::encode(@listing.json[:startup][:url])}&hashtags=builtinmcr,#{@listing.comma_tags.gsub(' ', '')}", :target => "_blank"
                 = " "
                 = link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{@listing.json[:startup][:url]}"
                 

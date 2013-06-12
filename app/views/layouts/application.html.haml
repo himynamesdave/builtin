@@ -5,31 +5,31 @@
     / Title
     %title
       - unless @title.nil? then
-        = @title + " - Built in Manchester"
+        = @title + " - Built in Hong Kong"
       - else
-        Built in Manchester: A collection of Manchester's technology startups
+        Built in Hong Kong: A collection of Hong Kong's technology startups
 
     / General Information
     %meta{ :charset => "utf-8" }
     %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1' }
-    %meta{ :name => "description", :content => "Built in Manchester is a collection of awesome startups - both established and upcoming - all of which are proudly based in Manchester, UK." }
-    %meta{ :name => "tags", :content => "manchester startups, based in manchester, technology startups, uk startups, british startups, north west startups" }
+    %meta{ :name => "description", :content => "Built in Hong Kong is a collection of awesome startups - both established and upcoming - all of which are proudly based in Hong Kong." }
+    %meta{ :name => "tags", :content => "Hong Kong startups, based in Hong Kong, technology startups, HK startups, China startups" }
 
     / Social media goodness
     - if @opengraph.nil? then
-      %meta{ :property => "og:site_name", :content => "Built in Manchester" }
-      %meta{ :property => "og:title", :content => "Built in Manchester: A collection of Manchester's technology startups" }
+      %meta{ :property => "og:site_name", :content => "Built in Hong Kong" }
+      %meta{ :property => "og:title", :content => "Built in Hong Kong: A collection of Hong Kong's technology startups" }
       %meta{ :property => "og:type", :content => "website" }
-      %meta{ :property => "og:description", :content => "Built in Manchester is a collection of awesome startups - both established and upcoming - all of which are proudly based in Manchester, UK." }
-      %meta{ :property => "og:image", :content => "http://www.builtinmcr.com/assets/logo@2x.png" }
-      %meta{ :property => "og:url", :content => "http://www.builtinmcr.com" }
+      %meta{ :property => "og:description", :content => "Built in Hong Kong is a collection of awesome startups - both established and upcoming - all of which are proudly based in Hong Kong." }
+      %meta{ :property => "og:image", :content => "http://www.builtinhk.com/assets/logo@2x.png" }
+      %meta{ :property => "og:url", :content => "http://www.builtinhk.com" }
     - else
 
       -# %meta{ :property => "place:location:latitude", :content => "" }
       -# %meta{ :property => "place:location:longitude", :content => "" }
 
-      %meta{ :property => "og:site_name", :content => "Built in Manchester" }
-      %meta{ :property => "og:title", :content => @opengraph[:startup][:name].to_s + " - Built in Manchester" }
+      %meta{ :property => "og:site_name", :content => "Built in Hong Kong" }
+      %meta{ :property => "og:title", :content => @opengraph[:startup][:name].to_s + " - Built in Hong Kong" }
       %meta{ :property => "og:url", :content => @opengraph[:startup][:url] }
       %meta{ :property => "og:description", :content => @opengraph[:startup][:description] }
       %meta{ :property => "og:image", :content => @opengraph[:startup][:logo] }
@@ -39,7 +39,7 @@
       %meta{ :property => "og:article:modified_time", :content => @opengraph[:when][:updated] }
       %meta{ :property => "og:locale", :content => "en_GB" }
 
-      %meta{ :property => "fb:admins", :content => "555155596" }
+      %meta{ :property => "fb:admins", :content => "698900233" }
       
 
     / Mobile-friendly tags - Taken from http://html5boilerplate.com/
@@ -70,7 +70,7 @@
     .container
       .three.columns.sidebar
         %nav
-          %h1= link_to content_tag(:span, "Built in Manchester"), root_path
+          %h1= link_to content_tag(:span, "Built in Hong Kong"), root_path
           %ul
             %li{ :class => is_active?("startups#index") }= link_to "Featured", root_path
             %li{ :class => is_active?("startups#hiring") }= link_to "Hiring", startups_hiring_path
@@ -97,18 +97,10 @@
         try{Typekit.load();}catch(e){}
 
       :javascript
-        var GoSquared = {};
-        GoSquared.acct = "GSN-579350-R";
-        (function(w){
-          function gs(){
-            w._gstc_lt = +new Date;
-            var d = document, g = d.createElement("script");
-            g.type = "text/javascript";
-            g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-            var s = d.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(g, s);
-          }
-          w.addEventListener ?
-            w.addEventListener("load", gs, false) :
-            w.attachEvent("onload", gs);
-        })(window);
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-41648793-1', 'builtinhk.com');
+        ga('send', 'pageview');

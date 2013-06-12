@@ -94,8 +94,8 @@ class StartupsController < ApplicationController
 
     # Amazon S3
     filename = sanitize_filename(@listing.name).downcase + File.extname(file.original_filename)
-    AWS::S3::S3Object.store(filename, file.read, 'builtinmcr-assets', :access => :public_read)    
-    @listing.logo = AWS::S3::S3Object.url_for(filename, 'builtinmcr-assets', :authenticated => false)
+    AWS::S3::S3Object.store(filename, file.read, 'builtinhk-assets', :access => :public_read)    
+    @listing.logo = AWS::S3::S3Object.url_for(filename, 'builtinhk-assets', :authenticated => false)
 
     # Must not be active
     @listing.active = false

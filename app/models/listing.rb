@@ -55,7 +55,7 @@ class Listing < ActiveRecord::Base
 	  # Delete S3 logo goodness
 	  before_destroy :remove_s3_logo
 	  def remove_s3_logo
-	  	@bucket = 'builtinmcr-assets'
+	  	@bucket = 'builtinhk-assets'
 	  	@file = URI::parse(self.logo).path[@bucket.length+2..-1] # added 2 for the trailing slashes /builtinmcr-assets/:file.png
 	  	AWS::S3::S3Object.find(@file, @bucket).delete
 	  end
@@ -165,7 +165,7 @@ class Listing < ActiveRecord::Base
   	  		:startup => {
   	  			:id => self.id,
   	  			:name => self.name,
-  	  			:url => "http://www.builtinmcr.com/#{self.slug}",
+  	  			:url => "http://www.builtinhk.com/#{self.slug}",
   	  			:logo => self.logo,
   	  			:address => self.address.split(/\r?\n/).map{ |e| e[0..-2] },
   	  			:raw_address => self.address,

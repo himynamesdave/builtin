@@ -1,8 +1,8 @@
 /* TEAM */
-	Developer: Bilawal Hameed
-	Contact: b [at] bilawal.co.uk
-	Twitter: @bilawalhameed
-	From: Manchester, UK
+	Developer: David Greenwood
+	Contact: hello [at] dgwd.co
+	Twitter: @himynamesdave
+	From: Hong Kong, CN
 
 /* SITE */
 	Launched: 2013/04/19

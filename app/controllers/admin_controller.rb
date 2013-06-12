@@ -43,12 +43,12 @@ class AdminController < ApplicationController
 	    # Amazon S3
 	    filename = sanitize_filename(@listing.name).downcase + File.extname(file.original_filename)
 	    
-	    AWS::S3::S3Object.delete(File.basename(@listing.logo), 'builtinmcr-assets')
-	    AWS::S3::S3Object.delete(filename, 'builtinmcr-assets')
+	    AWS::S3::S3Object.delete(File.basename(@listing.logo), 'builtinhk-assets')
+	    AWS::S3::S3Object.delete(filename, 'builtinhk-assets')
 	    
-	    AWS::S3::S3Object.store(filename, file.read, 'builtinmcr-assets', :access => :public_read)
+	    AWS::S3::S3Object.store(filename, file.read, 'builtinhk-assets', :access => :public_read)
 
-	    params[:listing][:logo] = AWS::S3::S3Object.url_for(filename, 'builtinmcr-assets', :authenticated => false)
+	    params[:listing][:logo] = AWS::S3::S3Object.url_for(filename, 'builtinhk-assets', :authenticated => false)
 	end
 
     if @listing.update_attributes(params[:listing])
